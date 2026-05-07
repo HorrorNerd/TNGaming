@@ -1,8 +1,8 @@
 const creators = [
   {
     name: "Sn0wDriven",
-    streams: "Ark Survival Ascended • Survival Games • Community Streams",
-    categories: ["ark", "variety", "youtube", "twitch"],
+    streams: "Ark • Minecraft • Fortnite",
+    categories: ["ark", "minecraft", "fortnite", "youtube", "twitch"],
     links: {
       YouTube: "https://youtube.com/@sn0wdriven",
       Twitch: "https://www.twitch.tv/snowdrivengaming"
@@ -10,15 +10,15 @@ const creators = [
   },
   {
     name: "Noperz",
-    streams: "Gaming • Community Content",
-    categories: ["variety", "youtube"],
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube"],
     links: {
       YouTube: "https://youtube.com/@noperzplayz"
     }
   },
   {
     name: "Fat Frog’s Swamp",
-    streams: "Ark Survival Ascended • Server Cluster • Survival Content",
+    streams: "Ark",
     categories: ["ark", "youtube"],
     links: {
       YouTube: "https://youtube.com/@fatfrogsswamp?si=Yja5xPUkYjt6yoEL"
@@ -26,8 +26,8 @@ const creators = [
   },
   {
     name: "Brittaneous",
-    streams: "Variety • Community Content",
-    categories: ["variety", "twitch", "tiktok"],
+    streams: "Fortnite",
+    categories: ["fortnite", "twitch", "tiktok"],
     links: {
       Twitch: "https://twitch.tv/brittaneous",
       TikTok: "https://www.tiktok.com/@brittaneousr"
@@ -35,8 +35,8 @@ const creators = [
   },
   {
     name: "Bram",
-    streams: "Gaming • Variety • Community Content",
-    categories: ["variety", "youtube", "twitch", "tiktok"],
+    streams: "Fortnite • Variety",
+    categories: ["fortnite", "variety", "youtube", "twitch", "tiktok"],
     links: {
       Twitch: "https://www.twitch.tv/lovealwaysashleybram/",
       YouTube: "https://youtube.com/@lovealwaysashley-bram",
@@ -45,16 +45,16 @@ const creators = [
   },
   {
     name: "DiamondBaby",
-    streams: "Gaming • Community Streams",
-    categories: ["variety", "twitch"],
+    streams: "Fortnite • Variety",
+    categories: ["fortnite", "variety", "twitch"],
     links: {
       Twitch: "https://www.twitch.tv/diamondbaby1989"
     }
   },
   {
     name: "Georgiaboyboomer",
-    streams: "Gaming • Variety • Community Content",
-    categories: ["variety", "youtube", "twitch"],
+    streams: "Fortnite",
+    categories: ["fortnite", "youtube", "twitch"],
     links: {
       YouTube: "https://youtube.com/@georgiaboyboomer?si=Y9xzCOzWaCzrKmzL",
       Twitch: "https://www.twitch.tv/georgiaboyboomer"
@@ -62,15 +62,15 @@ const creators = [
   },
   {
     name: "Arcadian Nomad",
-    streams: "Short-form Gaming • Community Content",
-    categories: ["variety", "tiktok"],
+    streams: "Fortnite • Retro",
+    categories: ["fortnite", "retro", "tiktok"],
     links: {
       TikTok: "https://www.tiktok.com/@arcadiannomad2?_r=1&_t=ZT-95hwTLVcrew"
     }
   },
   {
     name: "WPlayzFN",
-    streams: "Fortnite • Community Gaming",
+    streams: "Fortnite",
     categories: ["fortnite", "twitch"],
     links: {
       Twitch: "https://www.twitch.tv/wplayzfn?sr=a"
@@ -78,8 +78,8 @@ const creators = [
   },
   {
     name: "GreeneBean73",
-    streams: "Gaming • Community Streams",
-    categories: ["variety", "youtube", "twitch"],
+    streams: "Ark",
+    categories: ["ark", "youtube", "twitch"],
     links: {
       YouTube: "https://youtube.com/@GreeneBean73",
       Twitch: "https://www.twitch.tv/greenebean73"
@@ -87,7 +87,7 @@ const creators = [
   },
   {
     name: "FlukiGamer",
-    streams: "Ark • Variety Gaming",
+    streams: "Ark • Variety",
     categories: ["ark", "variety", "youtube"],
     links: {
       YouTube: "https://youtube.com/@flukigamer?si=d1ikB3J8aI8YLrLC"
