@@ -1,114 +1,943 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TNGaming</title>
-  <meta name="description" content="TNGaming landing page">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="hero">
-    <div class="wrap">
-      <div class="nav">
-        <div class="brand">
-          <div class="brand-mark">TN</div>
-          <div>
-            <strong>TNGaming</strong>
-            <span class="note">Front porch vibes. Family-friendly gaming. Real community.</span>
-          </div>
-        </div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#watch">Watch</a>
-          <a href="#schedule">Schedule</a>
-        </nav>
-      </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <div class="hero-card">
-        <div>
-          <div class="eyebrow">Welcome to TNGaming</div>
-          <h1>Pull up a chair and stay awhile.</h1>
-          <p class="lead">TNGaming is built around fun, chill, family-friendly streams with a front-porch feel. This one-page landing site works across desktop, tablet, and mobile so visitors can quickly learn who TNGaming is, where to watch, and when to tune in.</p>
-          <div class="hero-buttons">
-            <a class="btn primary" href="https://www.youtube.com/channel/UCKEXfQtsXXbJxXk1bfNCUnQ" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-            <a class="btn secondary" href="https://www.twitch.tv/swttngaming" target="_blank" rel="noopener noreferrer">Watch on Twitch</a>
-          </div>
+  <title>TNGaming | Community Hub</title>
+  <meta name="description" content="TNGaming is a family-friendly gaming community with front porch vibes, live streams, videos, community nights, and creator support." />
+
+  <style>
+    :root {
+      --bg: #070912;
+      --card: rgba(15, 22, 38, 0.82);
+      --text: #f8fafc;
+      --muted: #b7c0d8;
+      --accent: #22c55e;
+      --accent-2: #38bdf8;
+      --gold: #facc15;
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(rgba(7, 9, 18, 0.72), rgba(7, 9, 18, 0.92)),
+        url("assets/tngaming-background.jpg") center/cover fixed no-repeat,
+        var(--bg);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 9, 18, 0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: fit-content;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      background: #0d1322;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--muted);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .section {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 78px 0;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 90px 0 70px;
+    }
+
+    .hero-inner {
+      width: min(850px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      width: min(340px, 82vw);
+      margin: 0 auto 22px;
+      filter: drop-shadow(0 22px 35px rgba(0, 0, 0, 0.5));
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      background: rgba(250, 204, 21, 0.12);
+      border: 1px solid rgba(250, 204, 21, 0.28);
+      border-radius: 999px;
+      padding: 7px 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 8vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 20px;
+      text-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      max-width: 740px;
+      margin: 0 auto 28px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-youtube {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-twitch {
+      background: #8b5cf6;
+      color: white;
+    }
+
+    .btn-tiktok {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-soft {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 720px;
+      margin-top: 12px;
+    }
+
+    .glass-panel {
+      background: linear-gradient(145deg, rgba(17, 24, 42, 0.88), rgba(12, 18, 32, 0.72));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: clamp(20px, 4vw, 34px);
+    }
+
+    .about-grid,
+    .watch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card,
+    .watch-card,
+    .creator-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .feature-card h3,
+    .watch-card h3,
+    .creator-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p,
+    .watch-card p,
+    .creator-card p {
+      color: var(--muted);
+    }
+
+    .watch-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 210px;
+    }
+
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-weight: 900;
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 12px;
+    }
+
+    .community-intro {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .community-intro::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -90px auto;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.24), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hub-tools {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text);
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent);
+      color: #03130a;
+      border-color: rgba(34, 197, 94, 0.8);
+    }
+
+    .creator-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .creator-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .creator-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent 45%, rgba(244, 114, 182, 0.06));
+      pointer-events: none;
+    }
+
+    .creator-top,
+    .creator-body,
+    .creator-links {
+      position: relative;
+      z-index: 1;
+    }
+
+    .creator-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .creator-avatar {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      color: #06111f;
+      font-weight: 950;
+      font-size: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .creator-tag {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--gold);
+      background: rgba(250, 204, 21, 0.1);
+      border: 1px solid rgba(250, 204, 21, 0.2);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .creator-body {
+      flex: 1;
+    }
+
+    .creator-streams {
+      color: var(--text) !important;
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .creator-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .mini-link {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .mini-link:hover {
+      background: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      text-align: left;
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .schedule-table th {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+    }
+
+    .schedule-table td {
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      background: rgba(7, 9, 18, 0.78);
+      padding: 26px 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .section-head {
+        display: block;
+      }
+
+      .about-grid,
+      .watch-grid,
+      .creator-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      nav a {
+        padding: 7px 10px;
+        font-size: 0.86rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 62px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .about-grid,
+      .watch-grid,
+      .creator-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button-row {
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .schedule-table,
+      .schedule-table thead,
+      .schedule-table tbody,
+      .schedule-table th,
+      .schedule-table td,
+      .schedule-table tr {
+        display: block;
+      }
+
+      .schedule-table thead {
+        display: none;
+      }
+
+      .schedule-table tr {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+
+      .schedule-table td {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .schedule-table td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--text);
+        font-weight: 900;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="TNGaming home">
+        <img class="brand-logo" src="assets/tngaming-logo.png" alt="TNGaming logo" />
+        <div class="brand-text">
+          <strong>TNGAMING</strong>
+          <span>Front porch gaming</span>
         </div>
-        <div class="logo-panel">
-          <div class="logo-box">
-            <div class="logo-state"></div>
-            <div class="logo-text">TNGAMING</div>
-          </div>
-        </div>
-      </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#watch">Watch</a>
+        <a href="#community">Community Hub</a>
+        <a href="#schedule">Schedule</a>
+      </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="about" class="panel">
-      <h2>About Us</h2>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <img class="hero-logo" src="assets/tngaming-logo.png" alt="TNGaming logo" />
+
+        <div class="eyebrow">Family-friendly gaming • Real community</div>
+
+        <h1>Pull up a chair and stay awhile.</h1>
+
+        <p>
+          TNGaming is built around fun, chill, family-friendly streams with a front-porch feel.
+          Find our channels, check the schedule, and meet the community family we support.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-youtube" href="https://youtube.com/@SwtTNGaming" target="_blank" rel="noopener">▶ YouTube</a>
+          <a class="btn btn-twitch" href="https://twitch.tv/swttngaming" target="_blank" rel="noopener">⌾ Twitch</a>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@tngaming1786?_r=1&_t=ZT-96AYygrTfHZ" target="_blank" rel="noopener">♪ TikTok</a>
+          <a class="btn btn-soft" href="#community">Visit Community Hub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-head">
+        <div>
+          <h2>About Us</h2>
+          <p>
+            TNGaming is a laid-back gaming space with a warm, front-porch style.
+            The vibe is fun, steady, and community-first.
+          </p>
+        </div>
+      </div>
+
       <div class="about-grid">
-        <div class="card">
-          <p><strong>TNGaming</strong> is a laid-back gaming space with a warm, front-porch style. The vibe is fun, steady, and community-first. Streams and videos are built around good energy, real reactions, shared laughs, and games worth sinking into.</p>
-          <p>Whether someone drops in for a live stream, catches a video later, or checks the schedule before the next session, this page gives them one clean place to start.</p>
-        </div>
-        <div class="stack">
-          <div class="card mini"><strong>The Vibe</strong>Front porch energy, friendly banter, and a welcoming community.</div>
-          <div class="card mini"><strong>The Content</strong>Live streams, gameplay videos, shorts, and creator-led community moments.</div>
-          <div class="card mini"><strong>The Goal</strong>Give every visitor one simple place to find the channel, socials, and stream schedule.</div>
-        </div>
+        <article class="feature-card">
+          <h3>The Vibe</h3>
+          <p>Front porch energy, friendly banter, family-friendly streams, and a welcoming community.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>The Content</h3>
+          <p>Live streams, gameplay videos, shorts, creator-led community moments, survival games, Fortnite, and more.</p>
+        </article>
       </div>
     </section>
 
-    <section id="watch" class="panel">
-      <h2>Watch & Follow</h2>
-      <div class="link-grid">
-        <a class="social" href="https://www.youtube.com/channel/UCKEXfQtsXXbJxXk1bfNCUnQ" target="_blank" rel="noopener noreferrer">
-          <div class="icon">▶</div>
-          <div>
-            <strong>YouTube</strong>
-            <small>Main home for videos, streams, shorts, and uploads.</small>
-          </div>
-        </a>
+    <section id="watch" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Watch & Follow</h2>
+          <p>One clean spot to find the main TNGaming channels and keep up with videos, streams, and clips.</p>
+        </div>
+      </div>
 
-        <a class="social" href="https://www.twitch.tv/swttngaming" target="_blank" rel="noopener noreferrer">
-          <div class="icon">⌾</div>
+      <div class="watch-grid">
+        <article class="watch-card">
           <div>
-            <strong>Twitch</strong>
-            <small>Live streams, hangouts, and extra community sessions.</small>
+            <div class="platform-icon">▶</div>
+            <h3>YouTube</h3>
+            <p>Main home for videos, streams, shorts, uploads, and community moments.</p>
           </div>
-        </a>
+          <a class="btn btn-youtube" href="https://youtube.com/@SwtTNGaming" target="_blank" rel="noopener">Watch on YouTube</a>
+        </article>
 
-        <a class="social" href="#" target="_blank" rel="noopener noreferrer">
-          <div class="icon">♪</div>
+        <article class="watch-card">
           <div>
-            <strong>TikTok</strong>
-            <small>Add your TikTok link here.</small>
+            <div class="platform-icon">⌾</div>
+            <h3>Twitch</h3>
+            <p>Live streams, hangouts, and extra community sessions.</p>
           </div>
-        </a>
+          <a class="btn btn-twitch" href="https://twitch.tv/swttngaming" target="_blank" rel="noopener">Watch on Twitch</a>
+        </article>
+
+        <article class="watch-card">
+          <div>
+            <div class="platform-icon">♪</div>
+            <h3>TikTok</h3>
+            <p>Short clips, highlights, funny moments, and quick updates.</p>
+          </div>
+          <a class="btn btn-tiktok" href="https://www.tiktok.com/@tngaming1786?_r=1&_t=ZT-96AYygrTfHZ" target="_blank" rel="noopener">Follow on TikTok</a>
+        </article>
+
+        <article class="watch-card">
+          <div>
+            <div class="platform-icon">★</div>
+            <h3>Community Hub</h3>
+            <p>Meet the friends, creators, and community members who are part of the TNGaming family.</p>
+          </div>
+          <a class="btn btn-soft" href="#community">Open the Hub</a>
+        </article>
       </div>
     </section>
 
-    <section id="schedule" class="panel">
-      <h2>Schedule</h2>
-      <p class="note">Replace the sample rows below with the current stream plan whenever the schedule changes.</p>
-      <div class="table-wrap">
-        <table>
+    <section id="community" class="section">
+      <div class="glass-panel community-intro">
+        <div class="section-head" style="margin-bottom: 0;">
+          <div>
+            <h2>Community Hub</h2>
+            <p>
+              This is our TNGaming family — friends, creators, and community members we’re proud to support.
+              Some join us for streams, servers, collabs, and community nights, while others are creators we cheer on from the Old Porch.
+              Check out where they stream, what they play, and show them some love.
+            </p>
+          </div>
+        </div>
+
+        <div class="hub-tools" aria-label="Community filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ark">Ark</button>
+          <button class="filter-btn" data-filter="fortnite">Fortnite</button>
+          <button class="filter-btn" data-filter="variety">Variety</button>
+          <button class="filter-btn" data-filter="youtube">YouTube</button>
+          <button class="filter-btn" data-filter="twitch">Twitch</button>
+          <button class="filter-btn" data-filter="tiktok">TikTok</button>
+        </div>
+      </div>
+
+      <div class="creator-grid" id="creatorGrid"></div>
+    </section>
+
+    <section id="schedule" class="section">
+      <div class="section-head">
+        <div>
+          <h2>Schedule</h2>
+          <p>Replace these rows whenever the stream plan changes.</p>
+        </div>
+      </div>
+
+      <div class="glass-panel">
+        <table class="schedule-table">
           <thead>
-            <tr><th>Day</th><th>Time</th><th>Series / Stream</th><th>Notes</th></tr>
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+              <th>Series / Stream</th>
+              <th>Notes</th>
+            </tr>
           </thead>
+
           <tbody>
-            <tr><td>Sunday</td><td>8:00 AM</td><td>Minecraft Solo Survival</td><td>Main video release block</td></tr>
-            <tr><td>Sunday</td><td>9:30 PM</td><td>Iron Crown Combat</td><td>Live event stream</td></tr>
-            <tr><td>Monday–Saturday</td><td>10:00 AM</td><td>Rotating Series</td><td>Ark / Minecraft with friends / featured community slot</td></tr>
-            <tr><td>Daily</td><td>7:00 PM</td><td>Fortnite</td><td>Zero Build / with viewers / community play</td></tr>
-            <tr><td>Selected Nights</td><td>9:30 PM</td><td>Late Stream Slot</td><td>Story game, special event, or creator choice</td></tr>
+            <tr>
+              <td data-label="Day">Sunday</td>
+              <td data-label="Time">8:00 AM</td>
+              <td data-label="Series / Stream">Minecraft Solo Survival</td>
+              <td data-label="Notes">Main video release block</td>
+            </tr>
+
+            <tr>
+              <td data-label="Day">Sunday</td>
+              <td data-label="Time">9:30 PM</td>
+              <td data-label="Series / Stream">Iron Crown Combat</td>
+              <td data-label="Notes">Live event stream</td>
+            </tr>
+
+            <tr>
+              <td data-label="Day">Monday–Saturday</td>
+              <td data-label="Time">10:00 AM</td>
+              <td data-label="Series / Stream">Rotating Series</td>
+              <td data-label="Notes">Ark / Minecraft with friends / featured community slot</td>
+            </tr>
+
+            <tr>
+              <td data-label="Day">Daily</td>
+              <td data-label="Time">7:00 PM</td>
+              <td data-label="Series / Stream">Fortnite</td>
+              <td data-label="Notes">Zero Build / viewer games / community play</td>
+            </tr>
+
+            <tr>
+              <td data-label="Day">Selected Nights</td>
+              <td data-label="Time">9:30 PM</td>
+              <td data-label="Series / Stream">Late Stream Slot</td>
+              <td data-label="Notes">Story game, special event, or creator choice</td>
+            </tr>
           </tbody>
         </table>
       </div>
-      <div class="card"><strong>Easy edit spot:</strong> open <code>index.html</code> and update the rows inside the schedule table.</div>
     </section>
   </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© TNGaming. Front porch vibes. Family-friendly gaming. Real community.</p>
+    </div>
+  </footer>
+
+  <script>
+    const creators = [
+      {
+        name: "Sn0wDriven",
+        initials: "SN",
+        tag: "TNGaming Family",
+        streams: "Ark Survival Ascended • Survival Games • Community Streams",
+        description: "A community friend we support and cheer on, often connected through survival adventures and community gaming moments.",
+        categories: ["ark", "variety", "youtube", "twitch"],
+        links: {
+          YouTube: "https://youtube.com/@sn0wdriven",
+          Twitch: "https://www.twitch.tv/snowdrivengaming"
+        }
+      },
+      {
+        name: "Noperz",
+        initials: "NP",
+        tag: "TNGaming Family",
+        streams: "Gaming • Community Content",
+        description: "A creator we support as part of the wider TNGaming family and community circle.",
+        categories: ["variety", "youtube"],
+        links: {
+          YouTube: "https://youtube.com/@noperzplayz"
+        }
+      },
+      {
+        name: "Fat Frog’s Swamp",
+        initials: "FF",
+        tag: "Ark Server Community",
+        streams: "Ark Survival Ascended • Server Cluster • Survival Content",
+        description: "Home of the Ark server cluster where TNGaming explores, tames, builds, and gets into all kinds of swamp-side trouble.",
+        categories: ["ark", "youtube"],
+        links: {
+          YouTube: "https://youtube.com/@fatfrogsswamp?si=Yja5xPUkYjt6yoEL"
+        }
+      },
+      {
+        name: "Brittaneous",
+        initials: "BR",
+        tag: "TNGaming Family",
+        streams: "Variety • Community Content",
+        description: "A creator we love to support and include in the TNGaming family creator circle.",
+        categories: ["variety", "twitch", "tiktok"],
+        links: {
+          Twitch: "https://twitch.tv/brittaneous",
+          TikTok: "https://www.tiktok.com/@brittaneousr"
+        }
+      },
+      {
+        name: "Bram",
+        initials: "BM",
+        tag: "TNGaming Family",
+        streams: "Gaming • Variety • Community Content",
+        description: "A friend and creator we support across streams, videos, and community moments.",
+        categories: ["variety", "youtube", "twitch", "tiktok"],
+        links: {
+          Twitch: "https://www.twitch.tv/lovealwaysashleybram/",
+          YouTube: "https://youtube.com/@lovealwaysashley-bram",
+          TikTok: "https://www.tiktok.com/@lovealways.ashleyrussell"
+        }
+      },
+      {
+        name: "DiamondBaby",
+        initials: "DB",
+        tag: "TNGaming Family",
+        streams: "Gaming • Community Streams",
+        description: "A community creator we support and cheer on as part of the TNGaming family.",
+        categories: ["variety", "twitch"],
+        links: {
+          Twitch: "https://www.twitch.tv/diamondbaby1989"
+        }
+      },
+      {
+        name: "Georgiaboyboomer",
+        initials: "GB",
+        tag: "TNGaming Family",
+        streams: "Gaming • Variety • Community Content",
+        description: "A friend and creator in the community we’re proud to support.",
+        categories: ["variety", "youtube", "twitch"],
+        links: {
+          YouTube: "https://youtube.com/@georgiaboyboomer?si=Y9xzCOzWaCzrKmzL",
+          Twitch: "https://www.twitch.tv/georgiaboyboomer"
+        }
+      },
+      {
+        name: "Arcadian Nomad",
+        initials: "AN",
+        tag: "TNGaming Family",
+        streams: "Short-form Gaming • Community Content",
+        description: "A creator we support from the Old Porch and include in the TNGaming family circle.",
+        categories: ["variety", "tiktok"],
+        links: {
+          TikTok: "https://www.tiktok.com/@arcadiannomad2?_r=1&_t=ZT-95hwTLVcrew"
+        }
+      },
+      {
+        name: "WPlayzFN",
+        initials: "WP",
+        tag: "Fortnite Community",
+        streams: "Fortnite • Community Gaming",
+        description: "A Fortnite-focused creator and community member we support through the TNGaming family.",
+        categories: ["fortnite", "twitch"],
+        links: {
+          Twitch: "https://www.twitch.tv/wplayzfn?sr=a"
+        }
+      },
+      {
+        name: "GreeneBean73",
+        initials: "GB",
+        tag: "TNGaming Family",
+        streams: "Gaming • Community Streams",
+        description: "A creator and friend we support as part of the TNGaming family and community circle.",
+        categories: ["variety", "youtube", "twitch"],
+        links: {
+          YouTube: "https://youtube.com/@GreeneBean73",
+          Twitch: "https://www.twitch.tv/greenebean73"
+        }
+      }
+    ];
+
+    const creatorGrid = document.getElementById("creatorGrid");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    function renderCreators(filter = "all") {
+      const filteredCreators = filter === "all"
+        ? creators
+        : creators.filter((creator) => creator.categories.includes(filter));
+
+      creatorGrid.innerHTML = filteredCreators.map((creator) => {
+        const links = Object.entries(creator.links)
+          .map(([label, url]) => `<a class="mini-link" href="${url}" target="_blank" rel="noopener">${label}</a>`)
+          .join("");
+
+        return `
+          <article class="creator-card" data-categories="${creator.categories.join(" ")}">
+            <div class="creator-top">
+              <div class="creator-avatar" aria-hidden="true">${creator.initials}</div>
+              <div>
+                <h3>${creator.name}</h3>
+                <span class="creator-tag">${creator.tag}</span>
+              </div>
+            </div>
+
+            <div class="creator-body">
+              <p class="creator-streams">${creator.streams}</p>
+              <p>${creator.description}</p>
+            </div>
+
+            <div class="creator-links">${links}</div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        renderCreators(button.dataset.filter);
+      });
+    });
+
+    renderCreators();
+  </script>
 </body>
 </html>
