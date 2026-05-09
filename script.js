@@ -92,6 +92,39 @@ const creators = [
     links: {
       YouTube: "https://youtube.com/@flukigamer?si=d1ikB3J8aI8YLrLC"
     }
+  },
+  {
+    name: "TheRaptorChapter",
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube", "twitch"],
+    links: {
+      YouTube: "https://youtube.com/@theraptorchapter?si=3tqvULclxVMHIsjB",
+      Twitch: "https://www.twitch.tv/theraptorchapter"
+    }
+  },
+  {
+    name: "Ricardo Rocky Gamer",
+    streams: "Minecraft • Variety",
+    categories: ["minecraft", "variety", "youtube"],
+    links: {
+      YouTube: "https://www.youtube.com/@RicardoRockyGamer-ol5vu"
+    }
+  },
+  {
+    name: "GarlicHeadJoe",
+    streams: "Ark • GTA RP",
+    categories: ["ark", "gta", "roleplay", "youtube"],
+    links: {
+      YouTube: "https://youtube.com/@garlicheadjoe?si=qtSBb6JJBDs2CZwm"
+    }
+  },
+  {
+    name: "GamingWithProdigalSon",
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube"],
+    links: {
+      YouTube: "https://youtube.com/@gamingwithprodigalson?si=lVH3MleWS2_3SGbE"
+    }
   }
 ];
 
