@@ -119,6 +119,54 @@ nav a:focus {
   padding: 78px 0;
 }
 
+.section-divider {
+  width: min(900px, calc(100% - 48px));
+  height: 1px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 197, 94, 0.75),
+    rgba(56, 189, 248, 0.75),
+    transparent
+  );
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(34, 197, 94, 0.22),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.section-divider::after {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -52%);
+  color: var(--gold);
+  background: rgba(7, 9, 18, 0.92);
+  border: 1px solid var(--border);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
 .hero {
   min-height: 86vh;
   display: grid;
@@ -559,6 +607,10 @@ footer {
 
   .section {
     padding: 54px 0;
+  }
+
+  .section-divider {
+    width: min(760px, calc(100% - 40px));
   }
 
   .about-grid,
