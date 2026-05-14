@@ -25,6 +25,48 @@ const creators = [
     }
   },
   {
+    name: "GreeneBean73",
+    streams: "Ark",
+    categories: ["ark", "youtube", "twitch"],
+    links: {
+      YouTube: "https://youtube.com/@GreeneBean73",
+      Twitch: "https://www.twitch.tv/greenebean73"
+    }
+  },
+  {
+    name: "FlukiGamer",
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube"],
+    links: {
+      YouTube: "https://youtube.com/@flukigamer?si=d1ikB3J8aI8YLrLC"
+    }
+  },
+  {
+    name: "TheRaptorChapter",
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube", "twitch"],
+    links: {
+      YouTube: "https://youtube.com/@theraptorchapter?si=3tqvULclxVMHIsjB",
+      Twitch: "https://www.twitch.tv/theraptorchapter"
+    }
+  },
+  {
+    name: "GarlicHeadJoe",
+    streams: "Ark • GTA RP",
+    categories: ["ark", "gta", "roleplay", "youtube"],
+    links: {
+      YouTube: "https://youtube.com/@garlicheadjoe?si=qtSBb6JJBDs2CZwm"
+    }
+  },
+  {
+    name: "GamingWithProdigalSon",
+    streams: "Ark • Variety",
+    categories: ["ark", "variety", "youtube"],
+    links: {
+      YouTube: "https://youtube.com/@gamingwithprodigalson?si=lVH3MleWS2_3SGbE"
+    }
+  },
+  {
     name: "Brittaneous",
     streams: "Fortnite",
     categories: ["fortnite", "twitch", "tiktok"],
@@ -41,6 +83,24 @@ const creators = [
       Twitch: "https://www.twitch.tv/lovealwaysashleybram/",
       YouTube: "https://youtube.com/@lovealwaysashley-bram",
       TikTok: "https://www.tiktok.com/@lovealways.ashleyrussell"
+    }
+  },
+  {
+    name: "Jay'sHouse30",
+    streams: "Fortnite • Variety",
+    categories: ["fortnite", "variety", "tiktok"],
+    links: {
+      TikTok: "https://www.tiktok.com/t/ZT9F39b3NQ8TD-ifvYd/"
+    }
+  },
+  {
+    name: "BattleBabesGaming",
+    streams: "Fortnite",
+    categories: ["fortnite", "youtube", "twitch", "tiktok"],
+    links: {
+      YouTube: "https://youtube.com/@battlebabesgaming?si=J4V9Xt96HZXaIhQD",
+      Twitch: "https://www.twitch.tv/battlebabesgaming",
+      TikTok: "https://www.tiktok.com/@battlebabesgaming?_r=1&_t=ZP-96Majd6A9pm"
     }
   },
   {
@@ -77,53 +137,11 @@ const creators = [
     }
   },
   {
-    name: "GreeneBean73",
-    streams: "Ark",
-    categories: ["ark", "youtube", "twitch"],
-    links: {
-      YouTube: "https://youtube.com/@GreeneBean73",
-      Twitch: "https://www.twitch.tv/greenebean73"
-    }
-  },
-  {
-    name: "FlukiGamer",
-    streams: "Ark • Variety",
-    categories: ["ark", "variety", "youtube"],
-    links: {
-      YouTube: "https://youtube.com/@flukigamer?si=d1ikB3J8aI8YLrLC"
-    }
-  },
-  {
-    name: "TheRaptorChapter",
-    streams: "Ark • Variety",
-    categories: ["ark", "variety", "youtube", "twitch"],
-    links: {
-      YouTube: "https://youtube.com/@theraptorchapter?si=3tqvULclxVMHIsjB",
-      Twitch: "https://www.twitch.tv/theraptorchapter"
-    }
-  },
-  {
     name: "Ricardo Rocky Gamer",
     streams: "Minecraft • Variety",
     categories: ["minecraft", "variety", "youtube"],
     links: {
       YouTube: "https://www.youtube.com/@RicardoRockyGamer-ol5vu"
-    }
-  },
-  {
-    name: "GarlicHeadJoe",
-    streams: "Ark • GTA RP",
-    categories: ["ark", "gta", "roleplay", "youtube"],
-    links: {
-      YouTube: "https://youtube.com/@garlicheadjoe?si=qtSBb6JJBDs2CZwm"
-    }
-  },
-  {
-    name: "GamingWithProdigalSon",
-    streams: "Ark • Variety",
-    categories: ["ark", "variety", "youtube"],
-    links: {
-      YouTube: "https://youtube.com/@gamingwithprodigalson?si=lVH3MleWS2_3SGbE"
     }
   }
 ];
